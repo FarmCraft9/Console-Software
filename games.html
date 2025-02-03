@@ -32,11 +32,13 @@
             color: #fff;
             text-align: center;
             background-color: rgba(0, 0, 0, 0.5);
+            position: relative;
         }
-        .container {
-            padding: 40px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
+        .centered-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
         .btn-primary {
             background-color: #007bff;
@@ -87,13 +89,9 @@
     </header>
 
     <div class="hero">
-    </div>
-
-    <div class="container">
-        <h2>Games</h2>
-        <div>
-            <p>CityFields Simulator</p>
-            <a href="#" class="btn-buy-now">BUY NOW</a>
+        <div class="centered-content">
+            <h2>Games</h2>
+            <p>Cityfields Simulator 2025 <a href="#" class="btn-buy-now">BUY NOW</a></p>
         </div>
     </div>
 
