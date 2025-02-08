@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pictures - Console Software</title>
-    <link rel="icon" href="consolesoftwarelogo.png" type="image/png">
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -86,4 +85,19 @@
         </div>
     </div>
 
-    <footer
+    <footer>
+        <p>&copy; 2025 Console Software. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const images = ["placeholder1.jpg", "placeholder2.jpg", "placeholder3.jpg"];
+        let currentIndex = 0;
+
+        function showImage(index) {
+            const imageElement = document.getElementById('image');
+            imageElement.src = images[index];
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+           
