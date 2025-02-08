@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pictures - Console Software</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        header {
+            background-color: wheat;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 15px;
+            color: #fff;
+            text-decoration: none;
+        }
+        .hero {
+            background: url('background.png') center/cover no-repeat;
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+        .centered-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .gallery {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .gallery img {
+            width: 300px;
+            height: 200px;
+            margin: 0 15px;
+        }
+        .arrow {
+            font-size: 2em;
+            color: #333;
+            cursor: pointer;
+            user-select: none;
+            padding: 0 10px;
+        }
+        footer {
+            background-color: #343a40;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Console Software</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="games.html">Games</a>
+            <a href="pictures.html">Pictures</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <div class="centered-content">
+            <h2>Pictures</h2>
+        </div>
+    </div>
+
+    <div class="container gallery">
+        <div class="arrow" onclick="prevImage()">&#9664;</div>
+        <img id="image" src="placeholder1.jpg" alt="Placeholder Image">
+        <div class="arrow" onclick="nextImage()">&#9654;</div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Console Software. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const images = ["placeholder1.jpg", "placeholder2.jpg", "placeholder3.jpg"];
+        let currentIndex = 0;
+
+        function showImage(index) {
+            const imageElement = document.getElementById('image');
+            imageElement.src = images[index];
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage(currentIndex);
+        }
+    </script>
+</body>
+</html>
