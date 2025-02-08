@@ -34,17 +34,14 @@
             background-color: rgba(0, 0, 0, 0.5);
             position: relative;
         }
-        .centered-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
         .gallery {
             display: flex;
             align-items: center;
             justify-content: center;
-            position: relative;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
         .gallery img {
             width: 300px;
@@ -81,15 +78,11 @@
     </header>
 
     <div class="hero">
-        <div class="centered-content">
-            <h2>Pictures</h2>
+        <div class="gallery">
+            <div class="arrow" onclick="prevImage()">&#9664;</div>
+            <img id="image" src="placeholder1.jpg" alt="Placeholder Image">
+            <div class="arrow" onclick="nextImage()">&#9654;</div>
         </div>
-    </div>
-
-    <div class="container gallery">
-        <div class="arrow" onclick="prevImage()">&#9664;</div>
-        <img id="image" src="placeholder1.jpg" alt="Placeholder Image">
-        <div class="arrow" onclick="nextImage()">&#9654;</div>
     </div>
 
     <footer>
